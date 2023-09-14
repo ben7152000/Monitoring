@@ -1,0 +1,364 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.bg-green {
+    background-color: #00EB00 !important;
+}
+
+.bg-red {
+    background-color: #EB0001 !important;
+}
+
+#app {
+    position: relative;
+    width: 960px;
+    height: 600px;
+    background-color: #d1d1d1;
+}
+
+/* 介紹區域 */
+.main-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 960px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    z-index: 1;
+}
+
+/* logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: 50px;
+    display: none;
+    z-index: 2;
+}
+
+/* 放大按鈕 */
+.screen-enlarge {
+    width: 50px;
+    height: 50px;
+    margin: 32px 0 16px;
+}
+
+/* 按鈕 */
+.btn {
+    width: 190px;
+    height: 40px;
+    outline: none;
+    border: 1px solid #1d1d1d;
+    border-radius: 2px;
+    font-size: 26px;
+    background-color: #cccccc;
+    cursor: pointer;
+}
+
+.button {
+    position: relative;
+    width: 80px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    font-size: 20px;
+    background-color: #867F79;
+    cursor: pointer;
+}
+
+.button:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 80px;
+    height: 1px;
+    background-color: #867F79;
+}
+
+.button:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 1px;
+    background-color: #867F79;
+}
+
+/* 簡介介紹 */
+.instructions {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.instructions h1 {
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.instructions p {
+    font-size: 28px;
+    font-weight: 500;
+    text-align: start;
+    margin-bottom: 4px;
+}
+
+/* 遊戲資訊 */
+.game-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 960px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    background-color: #eeeeee;
+    z-index: 1;
+}
+
+.time-bar {
+    position: absolute;
+    top: 17px;
+    left: 740px;
+}
+
+.time-bar h4 {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.time {
+    margin-right: 8px;
+}
+
+.time-box {
+    width: 180px;
+    height: 20px;
+    background-color: #DB0001;
+}
+
+.timer-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #FF8D01;
+    transition: width 1s linear;
+}
+
+.game-title {
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    font-size: 24px;
+}
+
+.game-content {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    background-color: #000000;
+    border-radius: 50%;
+}
+
+#game-range {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    height: 260px;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transition: all 0.5s linear;
+}
+
+#ball-1 {
+    top: 150px;
+    left: 30px;
+}
+
+#ball-2 {
+    top: 100px;
+    left: 50px;
+}
+
+#ball-3 {
+    top: 200px;
+    left: 50px;
+}
+
+#ball-4 {
+    top: 160px;
+    left: 90px;
+}
+
+#ball-5 {
+    top: 40px;
+    left: 50px;
+}
+
+#ball-6 {
+    top: 140px;
+    left: 250px;
+}
+
+#ball-7 {
+    top: 120px;
+    left: 120px;
+}
+
+#ball-8 {
+    top: 150px;
+    left: 150px;
+}
+
+#ball-9 {
+    top: 10px;
+    left: 190px;
+}
+
+#ball-10 {
+    top: 30px;
+    left: 100px;
+}
+
+#ball-11 {
+    top: 190px;
+    left: 80px;
+}
+
+#ball-12 {
+    top: 200px;
+    left: 200px;
+}
+
+#ball-13 {
+    top: 80px;
+    left: 200px;
+}
+
+#ball-14 {
+    top: 250px;
+    left: 100px;
+}
+
+.buttons {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.button-container {
+    position: relative;
+}
+
+#button-1-check-true, #button-1-check-fail,
+#button-2-check-true, #button-2-check-fail,
+#button-3-check-true, #button-3-check-fail,
+#button-4-check-true, #button-4-check-fail,
+#button-5-check-true, #button-5-check-fail {
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+}
+
+.check {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.check span {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+/* 結果資訊 */
+.result-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 960px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    z-index: 1;
+}
+
+.result-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.result-content h1 {
+    font-size: 36px;
+    font-weight: 300;
+    margin-right: 200px;
+}
+
+.result-content span {
+    font-size: 36px;
+    font-weight: 600;
+}
