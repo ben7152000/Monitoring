@@ -76,7 +76,7 @@ let removeBalls = []
 /**
  * 監聽
  */
-document.addEventListener('DOMContentLoaded', DOMContentLoadedHandler);
+// document.addEventListener('DOMContentLoaded', DOMContentLoadedHandler);
 start.addEventListener('click', startClickHandler)
 restart.addEventListener('click', restartClickHandler)
 button1.addEventListener('click', () => buttonClickHandler(button1, button1CheckTrue, button1CheckFail))
@@ -144,6 +144,7 @@ function resetResult() {
 function startClickHandler () {
   goToGamePage()
   startCountdown(gameTime)
+  DOMContentLoadedHandler()
   if (Math.floor(gameTime) === 1) {
     time.innerHTML = `${Math.floor(gameTime)} minute to go`
   } else {
