@@ -263,7 +263,7 @@ function buttonClickHandler(button, checkTrue, checkFail) {
   }, delayCheckTime * 1000)
 
   setTimeout(() => {
-    ball.style.transition = 'all 0.6s linear'
+    ball.style.transition = 'all 0.7s linear'
   }, delayCheckTime * 1.02 * 1000)
 }
 
