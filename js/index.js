@@ -51,6 +51,10 @@ const button5CheckFail = document.querySelector('#button-5-check-fail')
 const correctResult = document.querySelector('#correct')
 const incorrectResult = document.querySelector('#incorrect')
 const performance = document.querySelector('#performance')
+const loginInfo = document.querySelector('.login-info')
+const login = document.querySelector('.login')
+const account = document.querySelector('#account')
+const password = document.querySelector('#password')
 
 /**
  * 變數
@@ -72,6 +76,10 @@ let randomCount = 0 // 隨機產生的數量
 let alreadyCheck = false
 let catchBalls = []
 let removeBalls = []
+const userInfo = {
+  account: 'FTTW',
+  password: 'Afttw4785',
+}
 
 /**
  * 監聽
@@ -84,6 +92,7 @@ button2.addEventListener('click', () => buttonClickHandler(button2, button2Check
 button3.addEventListener('click', () => buttonClickHandler(button3, button3CheckTrue, button3CheckFail))
 button4.addEventListener('click', () => buttonClickHandler(button4, button4CheckTrue, button4CheckFail))
 button5.addEventListener('click', () => buttonClickHandler(button5, button5CheckTrue, button5CheckFail))
+login.addEventListener('click', loginHandler)
 
 /**
  * 進到介紹介面
@@ -107,6 +116,21 @@ function goToGamePage() {
 function goToResultPage() {
   gameInfo.style.display = NONE
   resultInfo.style.display = FLEX
+}
+
+/**
+ * 登入
+ */
+function loginHandler() {
+  const userAccount = account.value
+  const userPassword = password.value
+
+  if (userAccount === userInfo.account && userPassword === userInfo.password) {
+    goToInstructionPage()
+    loginInfo.style.display = NONE
+  } else {
+    alert('帳號或密碼錯誤')
+  }
 }
 
 /**

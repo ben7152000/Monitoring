@@ -42,7 +42,7 @@ function handleComplete(evt,comp) {
 
 function animationEnd() {
   const logo = document.querySelector('.logo')
-  const mainInfo = document.querySelector('.main-info')
+  const loginInfo = document.querySelector('.login-info')
   logo.style.display = 'block'
-  mainInfo.style.display = 'flex'
+  loginInfo.style.display = 'flex'
 }
