@@ -7,14 +7,6 @@ const TRUE_BORDER = '6px solid #00EB00'
 const FAIL_BORDER = '6px solid #EB0001'
 
 /**
- * API
- */
-const url = 'https://sheets.googleapis.com/v4/spreadsheets'
-const id = '1UbzldKDnnwwWcyYbx-7i10nr-rx_bJMFzSzASHUp3YU'
-const sheet = 'Account'
-const key = 'AIzaSyCRhiUOa03yd0PobVYEnm5Ch0yXjFh9hww'
-
-/**
  * Dom
  */
 const mainInfo = document.querySelector('.main-info')
@@ -77,7 +69,7 @@ let number5 = 0
 let correct = 0
 let incorrect = 0
 let performanceRate = 0
-const gameTime = 2 // 分鐘
+let gameTime = 0 // 分鐘
 const delayCheckTime = 1 // 秒
 let randomInterval // 隨機倒數定時器
 let randomCount = 0 // 隨機產生的數量
@@ -334,10 +326,21 @@ function startCountdown(duration) {
 /**
  *  API
  */
-fetch(`${url}/${id}/values/${sheet}?alt=json&key=${key}`)
+const url = 'https://sheets.googleapis.com/v4/spreadsheets'
+const id = '1UbzldKDnnwwWcyYbx-7i10nr-rx_bJMFzSzASHUp3YU'
+const AccountSheet = 'Account'
+const ParamsSheet = 'Monitoring'
+const key = 'AIzaSyCRhiUOa03yd0PobVYEnm5Ch0yXjFh9hww'
+
+fetch(`${url}/${id}/values/${AccountSheet}?alt=json&key=${key}`)
   .then(res => res.json())
   .then(res => {
     userInfo.account = res.values[1][1]
     userInfo.password = res.values[1][2]
   })
 
+fetch(`${url}/${id}/values/${ParamsSheet}?alt=json&key=${key}`)
+  .then(res => res.json())
+  .then(res => {
+    gameTime = res.values[1][1]
+  })
